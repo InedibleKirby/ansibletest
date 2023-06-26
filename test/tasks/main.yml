@@ -1,6 +1,6 @@
 ---
 - name: Create users
-  hosts: all
+  hosts: test
   tasks:
   - name: Create bigmode
     ansible.builtin.user:
