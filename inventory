@@ -1,7 +1,5 @@
-kirby
 waddle
 localhost ansible_connection=local
-34.217.52.208
 
 [test]
 waddle
