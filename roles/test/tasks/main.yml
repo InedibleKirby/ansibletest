@@ -1,1 +1,8 @@
-# tasks file for test
+---
+# create some users
+- name: Create bigmode
+  ansible.builtin.user:
+    name: bigmode
+    comment: Big Mode
+    uid: 666
+    state: present
