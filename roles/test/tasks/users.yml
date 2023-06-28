@@ -1,0 +1,11 @@
+---
+- name: Create users
+  hosts: test
+  tasks:
+  - name: Create bigmode
+    ansible.builtin.user:
+      name: bigmode
+      comment: Big Mode
+      uid: 1069
+      group: admin
+# tasks file for test
