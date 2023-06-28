@@ -1,6 +1,6 @@
 kirby
 waddle
-localhost
+localhost ansible_connection=local
 
 [test]
 waddle
