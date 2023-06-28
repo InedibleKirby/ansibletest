@@ -1,0 +1,6 @@
+---
+- name: Stand up webserver
+  hosts: waddle
+ 
+  roles:
+    - webserver
