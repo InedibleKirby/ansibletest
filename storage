@@ -1,0 +1,6 @@
+---
+- name: Make storage
+  hosts: waddle
+ 
+  roles:
+    - storage
