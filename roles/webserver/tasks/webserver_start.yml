@@ -1,0 +1,10 @@
+---
+- name: Install httpd
+  ansible.builtin.dnf:
+    name: httpd
+    state: latest
+
+- name: Start httpd
+  ansible.builtin.service:
+    name: httpd
+    state: started

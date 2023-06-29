@@ -1,0 +1,8 @@
+---
+- name: Cron job
+  ansible.builtin.cron:
+    name: Run script to see files
+    minute: "*"
+    hour: "*"
+    user: "drew"
+    job: "ls -alh > /home/drew/output.txt"
