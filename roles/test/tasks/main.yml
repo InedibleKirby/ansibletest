@@ -1,4 +1,6 @@
 ---
+- include_tasks: parted.yml
+
 # create some users
 - name: Create bigmode
   ansible.builtin.user:
