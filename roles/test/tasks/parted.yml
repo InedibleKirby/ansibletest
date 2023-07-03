@@ -1,0 +1,9 @@
+---
+- name: Make some damn partitions
+  community.general.parted:
+    device: /dev/sda
+    number: 1
+    state: present
+    fs_type: ext4
+    part_start: 1GiB
+    part_end: 3GiB
