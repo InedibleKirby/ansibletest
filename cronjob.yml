@@ -1,0 +1,14 @@
+---
+- name: Make user
+  hosts: localhost
+  become: true
+
+  tasks:
+    - name: Cronjob
+      ansible.builtin.cron:
+        name: Print things to file
+        minute: "*/2"
+        hour: "*"
+        job: "echo Imaaaaaaaaaginaaaaaatioooooon >> /home/drew/Desktop/cronjob.txt"
+        cron_file: wahoo
+        state: present

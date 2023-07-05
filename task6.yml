@@ -1,0 +1,15 @@
+---
+- name: Make user
+  hosts: localhost
+  become: true
+  vars_files: 
+    - ./vault.yml
+
+  tasks:
+    - name: Create alice
+      ansible.builtin.user:
+        name: alice
+        uid: 1201
+        group: wheel
+        state: present
+        password: "{{ user_password | password_hash('sha512') }}"

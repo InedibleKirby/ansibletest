@@ -1,0 +1,16 @@
+---
+- name: Make storage
+  hosts: localhost
+  become: true
+
+  roles:
+    - name: rhel-system-roles.storage
+      storage_pools:
+        - name: test
+          disks: sda
+          volumes:
+            - name: yahoo
+              size: "3 GiB"
+              mount_point: "/mnt/test/yahoo"
+              fs_type: xfs
+              state: present
