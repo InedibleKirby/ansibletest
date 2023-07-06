@@ -4,7 +4,7 @@
  
   roles:
     - webserver
-    - name: redhat.rhel_system_roles.storage
+    - name: rhel-system-roles.storage
         storage_pools:
         - name: vg_web
           type: lvm
