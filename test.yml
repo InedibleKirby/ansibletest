@@ -1,6 +1,6 @@
 ---
 - name: Make user
-  hosts: waddle
+  hosts: test
   vars_files:
     - ./vault.yml
  
