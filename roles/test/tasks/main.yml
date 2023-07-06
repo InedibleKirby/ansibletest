@@ -2,12 +2,28 @@
 - include_tasks: parted.yml
 
 # create some users
-- name: Create bigmode
+- name: Create users with 1 in UID
   ansible.builtin.user:
-    name: bigmode
-    comment: Big Mode
-    uid: 666
+    name: "{{ item.username }}"
+    group: wheel
     state: present
+    password: "{{ user_password | password_hash('sha512') }}"
+  with_items: "{{ users }}"
+  when:
+    - ansible_fqdn in groups['test']
+    - "item.uid|string|first == '1'"
+
+- name: Create users with 2 in UID
+  ansible.builtin.user:
+    name: "{{ item.username }}"
+    group: wheel
+    state: present
+    password: "{{ user_password | password_hash('sha512') }}"
+  with_items: "{{ users }}"
+  when:
+    - ansible_fqdn in groups['test']
+    - "item.uid|string|first == '2'"
+
 
 - name: Install redhat.rhel_system_roles
   ansible.builtin.dnf:
