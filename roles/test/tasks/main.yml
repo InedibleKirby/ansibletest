@@ -11,7 +11,6 @@
     shell: /bin/bash
   with_items: "{{ users }}"
   when:
-    - ansible_fqdn in groups['test']
     - "item.uid|string|first == '1'"
 
 - name: Create users with 2 in UID
@@ -23,7 +22,6 @@
     shell: /bin/bash
   with_items: "{{ users }}"
   when:
-    - ansible_fqdn in groups['test']
     - "item.uid|string|first == '2'"
 
 
