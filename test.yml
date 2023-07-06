@@ -1,6 +1,8 @@
 ---
 - name: Make user
   hosts: waddle
+  vars_files:
+    - ./vault.yml
  
   roles:
     - test
