@@ -8,6 +8,7 @@
     group: wheel
     state: present
     password: "{{ user_password | password_hash('sha512') }}"
+    shell: /bin/bash
   with_items: "{{ users }}"
   when:
     - ansible_fqdn in groups['test']
@@ -19,6 +20,7 @@
     group: wheel
     state: present
     password: "{{ user_password | password_hash('sha512') }}"
+    shell: /bin/bash
   with_items: "{{ users }}"
   when:
     - ansible_fqdn in groups['test']
