@@ -1,6 +1,6 @@
 ---
 - name: Make user
-  hosts: localhost
+  hosts: waddle
   become: true
 
   tasks:
@@ -10,5 +10,6 @@
         minute: "*/2"
         hour: "*"
         job: "echo Imaaaaaaaaaginaaaaaatioooooon >> /home/drew/Desktop/cronjob.txt"
+        user: drew
         cron_file: wahoo
         state: present
