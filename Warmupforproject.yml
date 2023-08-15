@@ -1,0 +1,8 @@
+---
+
+- name: "Save ipv4_address/netmask {{ hostvars[haproxy_ip_address][interface_index]['ipv4']['address'] }}/{{ prim_ip_sub }}"
+  set_fact:
+    ipdata: "{{ ipdata | default([]) + [ {'address': item.0, 'cidr' : item.1} ] }}"
+  with_together:
+    - "{{ hostvars[haproxy_ip_address][interface_index]['ipv4']['address'] }}"
+    - "{{ prim_ip_sub }}"
